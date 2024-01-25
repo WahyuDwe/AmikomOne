@@ -1,25 +1,31 @@
 package com.amikom.amikomone.ui.screens.main.navigation
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.Article
+import androidx.compose.material.icons.automirrored.outlined.Article
 import androidx.compose.material.icons.automirrored.rounded.Article
-import androidx.compose.material.icons.automirrored.rounded.ViewList
 import androidx.compose.material.icons.rounded.*
+import androidx.compose.material.icons.outlined.*
+import androidx.compose.material.icons.filled.*
 import androidx.compose.ui.graphics.vector.ImageVector
 
 sealed class NavigationModel(
     val route: String,
     val selectedIcon: ImageVector? = null,
+    val unselectedIcon: ImageVector? = null,
     val title: String
 ) {
     data object Home : NavigationModel(
         route = "home",
-        selectedIcon = Icons.Rounded.Home,
+        selectedIcon = Icons.Filled.Home,
+        unselectedIcon = Icons.Outlined.Home,
         title = "Beranda"
     )
 
     data object Schedule : NavigationModel(
         route = "schedule",
-        selectedIcon = Icons.Rounded.CalendarMonth,
+        selectedIcon = Icons.Filled.CalendarMonth,
+        unselectedIcon = Icons.Outlined.CalendarMonth,
         title = "Jadwal"
     )
 
@@ -31,13 +37,15 @@ sealed class NavigationModel(
 
     data object History : NavigationModel(
         route = "history",
-        selectedIcon = Icons.AutoMirrored.Rounded.Article,
+        selectedIcon = Icons.AutoMirrored.Filled.Article,
+        unselectedIcon = Icons.AutoMirrored.Outlined.Article,
         title = "Riwayat"
     )
 
     data object Profile : NavigationModel(
         route = "profile",
-        selectedIcon = Icons.Rounded.Person,
+        selectedIcon = Icons.Filled.Person,
+        unselectedIcon = Icons.Outlined.Person,
         title = "Profil"
     )
 }

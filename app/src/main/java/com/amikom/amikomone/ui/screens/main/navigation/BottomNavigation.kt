@@ -30,23 +30,26 @@ fun BottomNavigation(
     )
 
     val navBackStackEntry by navController.currentBackStackEntryAsState()
-    val currentRoute = navBackStackEntry?.destination
+    val currentRoute = navBackStackEntry?.destination?.route
 
     NavigationBar {
         items.forEachIndexed { index, item ->
             NavigationBarItem(
                 icon = {
-                    item.selectedIcon?.let {
+                    item.selectedIcon?.let { icon ->
                         Icon(
-                            imageVector = it,
+                            imageVector = if (selectedItem == index) icon
+                            else item.unselectedIcon ?: icon,
                             contentDescription = item.title
                         )
                     }
                 },
                 label = { Text(item.title) },
-                selected = currentRoute?.hierarchy?.any { it.route == item.route } == true,
+                selected = currentRoute?.contains(item.route) == true,
                 onClick = {
                     selectedItem = index
+                    // make sure we do not navigate twice to the same screen
+                    if (currentRoute?.contains(item.route) == true) return@NavigationBarItem
                     navController.navigate(item.route)
                 }
             )
