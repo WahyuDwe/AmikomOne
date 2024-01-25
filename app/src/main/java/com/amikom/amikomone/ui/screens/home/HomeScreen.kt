@@ -41,17 +41,10 @@ fun HomeScreen(
                 ) {
                     Text(
                         text = "Halo, Dwee",
-                        modifier = Modifier.padding(top = 10.dp),
                         style = TextStyle(
-                            fontSize = 24.sp
+                            fontSize = 18.sp
                         )
                     )
-                    IconButton(onClick = { /*TODO*/ }) {
-                        Icon(
-                            imageVector = Icons.Rounded.Notifications,
-                            contentDescription = null
-                        )
-                    }
                 }
             }
         }

@@ -1,7 +1,7 @@
 package com.amikom.amikomone.ui.screens.main.navigation
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -12,19 +12,22 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavDestination.Companion.hierarchy
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import androidx.navigation.compose.rememberNavController
 
 @Composable
 fun BottomNavigation(
+    modifier: Modifier = Modifier,
     navController: NavHostController
 ) {
     var selectedItem by remember { mutableIntStateOf(0) }
     val items = listOf(
         NavigationModel.Home,
         NavigationModel.Schedule,
+        NavigationModel.Empty,
         NavigationModel.History,
         NavigationModel.Profile
     )
@@ -44,7 +47,21 @@ fun BottomNavigation(
                         )
                     }
                 },
-                label = { Text(item.title) },
+                enabled = item != NavigationModel.Empty,
+                label = {
+                    if (item == NavigationModel.Empty) {
+                        Box(
+                            modifier = modifier.padding(bottom = 8.dp)
+                        ) {
+//                            Text(
+//                                text = "Absen",
+//                                style = TextStyle(fontSize = 18.sp)
+//                            )
+                        }
+                    } else {
+                        Text(item.title)
+                    }
+                },
                 selected = currentRoute?.contains(item.route) == true,
                 onClick = {
                     selectedItem = index

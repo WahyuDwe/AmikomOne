@@ -29,11 +29,11 @@ sealed class NavigationModel(
         title = "Jadwal"
     )
 
-//    data object Empty : NavigationModel(
-//        route = "empty",
-//        selectedIcon = null,
-//        title = ""
-//    )
+    data object Empty : NavigationModel(
+        route = "empty",
+        selectedIcon = null,
+        title = ""
+    )
 
     data object History : NavigationModel(
         route = "history",

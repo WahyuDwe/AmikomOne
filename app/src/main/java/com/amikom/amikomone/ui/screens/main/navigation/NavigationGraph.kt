@@ -12,7 +12,6 @@ import com.amikom.amikomone.ui.screens.home.HomeScreen
 import com.amikom.amikomone.ui.screens.profile.ProfileScreen
 import com.amikom.amikomone.ui.screens.schedule.ScheduleScreen
 
-
 @Composable
 fun NavigationGraph(
     modifier: Modifier = Modifier,
