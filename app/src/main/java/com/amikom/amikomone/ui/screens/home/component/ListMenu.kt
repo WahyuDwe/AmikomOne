@@ -2,11 +2,8 @@ package com.amikom.amikomone.ui.screens.home.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -39,26 +36,26 @@ fun ListMenu() {
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(8.dp)
-                        .clickable { /*TODO : Move to menu screen*/ },
+                        .padding(start = 8.dp, end = 8.dp, bottom = 8.dp)
+                        .clickable { /*TODO*/ },
                     horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Center,
                 ) {
                     Image(
                         painter = painterResource(id = item.icon),
                         contentDescription = null,
                         modifier = Modifier
+                            .padding(top = 8.dp, bottom = 8.dp)
                             .size(50.dp)
                     )
-                    Spacer(modifier = Modifier.height(8.dp))
                     Text(
+                        modifier = Modifier.padding(bottom = 8.dp),
                         text = item.title,
                         style = TextStyle(
                             fontSize = 16.sp,
                             textAlign = TextAlign.Center,
                         ),
                     )
-                    Spacer(modifier = Modifier.height(8.dp))
+
                 }
             }
         }
