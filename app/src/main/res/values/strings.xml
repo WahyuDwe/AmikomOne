@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AmikomOne</string>
+    <string name="jadwal_kuliah">Jadwal Kuliah</string>
+    <string name="riwayat_presensi">Riwayat Presensi</string>
 </resources>
