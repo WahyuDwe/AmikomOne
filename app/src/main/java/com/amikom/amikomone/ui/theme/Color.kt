@@ -2,6 +2,14 @@ package com.amikom.amikomone.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
+val Purple80 = Color(0xFFD0BCFF)
+val PurpleGrey80 = Color(0xFFCCC2DC)
+val Pink80 = Color(0xFFEFB8C8)
+
+val Purple40 = Color(0xFF6650a4)
+val PurpleGrey40 = Color(0xFF625b71)
+val Pink40 = Color(0xFF7D5260)
+
 internal val Blue10 = Color(0xFF001F28)
 internal val Blue20 = Color(0xFF003544)
 internal val Blue30 = Color(0xFF004D61)
@@ -44,8 +52,8 @@ internal val Orange90 = Color(0xFFFFDBCF)
 internal val Purple10 = Color(0xFF36003C)
 internal val Purple20 = Color(0xFF560A5D)
 internal val Purple30 = Color(0xFF702776)
-internal val Purple40 = Color(0xFF8B418F)
-internal val Purple80 = Color(0xFFFFA9FE)
+//internal val Purple40 = Color(0xFF8B418F)
+//internal val Purple80 = Color(0xFFFFA9FE)
 internal val Purple90 = Color(0xFFFFD6FA)
 internal val PurpleGray30 = Color(0xFF4D444C)
 internal val PurpleGray50 = Color(0xFF7F747C)

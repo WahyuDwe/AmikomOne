@@ -70,4 +70,6 @@ dependencies {
     implementation(libs.androidx.material.icons.extended)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.accompanist.systemuicontroller)
+
+    implementation(libs.androidx.activity.ktx)
 }

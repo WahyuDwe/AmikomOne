@@ -12,6 +12,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -43,7 +44,7 @@ fun BottomNavigation(
                         Icon(
                             imageVector = if (selectedItem == index) icon
                             else item.unselectedIcon ?: icon,
-                            contentDescription = item.title
+                            contentDescription = null
                         )
                     }
                 },
@@ -59,7 +60,7 @@ fun BottomNavigation(
 //                            )
                         }
                     } else {
-                        Text(item.title)
+                        Text(stringResource(item.title))
                     }
                 },
                 selected = currentRoute?.contains(item.route) == true,

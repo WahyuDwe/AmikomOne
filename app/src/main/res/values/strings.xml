@@ -2,4 +2,9 @@
     <string name="app_name">AmikomOne</string>
     <string name="jadwal_kuliah">Jadwal Kuliah</string>
     <string name="riwayat_presensi">Riwayat Presensi</string>
+    <string name="beranda">Beranda</string>
+    <string name="jadwal">Jadwal</string>
+    <string name="riwayat">Riwayat</string>
+    <string name="profil">Profil</string>
+    <string name="blank" />
 </resources>
